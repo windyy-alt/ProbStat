@@ -5,7 +5,7 @@
 | :--------: | :------------: |
 | 5025241086 |  Callista Fidelya Roba Gultom |
 | 5025241180 | Dilbina Windi Azahra |
-| 5025241086 | Isabella Sienna Sulisthio |
+| 5025241199 | Isabella Sienna Sulisthio |
 | 5025241243 | Najma Lail Arazy |
 
 Dataset: [Predicting Heart Disease - Kaggle](https://www.kaggle.com/competitions/playground-series-s6e2/data)
