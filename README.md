@@ -133,7 +133,7 @@ GaussianNB, on the other hand, assumes all features follow a **continuous Gaussi
 
 The final selected model is **BernoulliNB with full preprocessing pipeline**, achieved a Kaggle public leaderboard score of: **0.9447**
 
-For more details, the full implementation including EDA, data preprocessing, feature engineering, ppipeline construction, and model training, please refer to the "Predicting_Heart_Disease_Group_9_Probstat.ipynb" uploaded in this repository.
+For more details, the full implementation including EDA, data preprocessing, feature engineering, ppipeline construction, and model training, please refer to the [Predicting_Heart_Disease_Group_9_Probstat.ipynb](https://github.com/windyy-alt/ProbStat/blob/main/Predicting_Heart_Disease_Group_9_Probstat.ipynb) uploaded in this repository.
 
 
 
