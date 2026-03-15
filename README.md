@@ -92,8 +92,8 @@ This project uses the dataset from the **Kaggle Playground Series - Season 6, Ep
 ### Target Variable
 
 The target column is `Heart Disease`, a binary classification label:
-- `Absence` (encoded as **0**) — the patient does **not** have heart disease
-- `Presence` (encoded as **1**) — the patient **has** heart disease
+- `Absence` (encoded as **0**) = the patient does **not** have heart disease
+- `Presence` (encoded as **1**) = the patient **has** heart disease
 
 ---
 
