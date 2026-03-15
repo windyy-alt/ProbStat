@@ -50,11 +50,94 @@ The main idea behind the Naive Bayes classifier is to use Bayes' Theorem to clas
 - The Naive Bayes Classifier is a simple probabilistic classifier and it has very few number of parameters which are used to build the ML models that can predict at a faster speed than other classification algorithms.
 - It is a probabilistic classifier because it assumes that one feature in the model is independent of existence of another feature. In other words, each feature contributes to the predictions with no relation between each other.
 - Naive Bayes Algorithm is used in spam filtration, Sentimental analysis, classifying articles and many more.
-  
-yg blm:
-- penjelasan singkat mengenai Teori Bayes
-- penjelasan bagaimana Teori Bayes digunakan dalam Algoritma Naive Bayes
-- penjelasan dataset yang digunakan
-- hasil eksekusi Naive Bayes, dilengkapi evaluasi akurasi
 
-Dianjurkan repository tersebut di-fork ke GitHub anggota grup. Dianjurkan menggunakan bahasa inggris dan menyajikan penjelasan secara visual
+  
+## Dataset Description
+
+This project uses the dataset from the **Kaggle Playground Series - Season 6, Episode 2** competition titled *"Predicting Heart Disease"*. The dataset was synthetically generated from a deep learning model trained on the original [Heart Disease Prediction dataset](https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data), meaning feature distributions are close to, but not exactly the same as, the original.
+
+---
+
+
+| File | Description |
+|---|---|
+| `train.csv` | Training set containing 630,000 rows and 15 columns, including the target label `Heart Disease` |
+| `test.csv` | Test set containing 270,000 rows and 14 columns (no target label) |
+| `sample_submission.csv` | A sample submission file showing the required output format |
+
+---
+
+### Features
+
+| Feature | Type | Description |
+|---|---|---|
+| `id` | int | Unique row identifier |
+| `Age` | int | Age of the patient in years |
+| `Sex` | int | Gender of the patient (1 = male, 0 = female) |
+| `Chest pain type` | int | Type of chest pain experienced (1–4) |
+| `BP` | int | Resting blood pressure (in mm Hg) |
+| `Cholesterol` | int | Serum cholesterol level (in mg/dl) |
+| `FBS over 120` | int | Fasting blood sugar > 120 mg/dl (1 = true, 0 = false) |
+| `EKG results` | int | Resting electrocardiographic results (0, 1, 2) |
+| `Max HR` | int | Maximum heart rate achieved |
+| `Exercise angina` | int | Exercise-induced angina (1 = yes, 0 = no) |
+| `ST depression` | float | ST depression induced by exercise relative to rest |
+| `Slope of ST` | int | Slope of the peak exercise ST segment (1–3) |
+| `Number of vessels fluro` | int | Number of major vessels colored by fluoroscopy (0–3) |
+| `Thallium` | int | Thallium stress test result (3 = normal, 6 = fixed defect, 7 = reversible defect) |
+| `Heart Disease` | string | **Target variable** — whether heart disease is present (`Presence`) or not (`Absence`) |
+
+---
+
+### Target Variable
+
+The target column is `Heart Disease`, a binary classification label:
+- `Absence` (encoded as **0**) — the patient does **not** have heart disease
+- `Presence` (encoded as **1**) — the patient **has** heart disease
+
+---
+
+
+## Model Evaluation Results
+
+### Cross-Validation (Local) vs. Kaggle Public Leaderboard Score
+
+Two Naive Bayes variants were evaluated and compared — both locally via cross-validation and on the Kaggle public leaderboard.
+
+| Model | CV Score (Local) | Kaggle Public Score |
+|---|---|---|
+| Gaussian Naive Bayes | 0.9230 | 0.9190 |
+| Bernoulli Naive Bayes | 0.9452 | 0.9447 |
+| **Selected Model** | **BernoulliNB** | **BernoulliNB** |
+
+---
+
+The slight difference between the local cross-validation score and the Kaggle public leaderboard score because:
+
+- **Local CV** evaluates the model on a held-out portion of the **training set**, which was generated from the same synthetic distribution.
+- **Kaggle's test set** is a separate, independently sampled portion of data that the model has never seen before, and may have slightly different feature distributions.
+
+The fact that the gap is very small (only 0.0003–0.004) indicates that the model **generalizes well** and is not overfitting.
+
+---
+
+### Why BernoulliNB Outperforms GaussianNB
+
+BernoulliNB consistently outperforms GaussianNB on this dataset for a key structural reason. After applying **OneHotEncoding** to all 8 categorical features, the majority of the feature space becomes **binary (0 or 1) columns**. BernoulliNB is specifically designed to work with binary features, making it a natural and effective fit for this transformed dataset.
+
+GaussianNB, on the other hand, assumes all features follow a **continuous Gaussian (normal) distribution**, an assumption that is violated by the presence of many binary one-hot encoded columns, which explains its slightly lower performance.
+
+---
+
+### Final Model Performance
+
+The final selected model is **BernoulliNB with full preprocessing pipeline**, achieved a Kaggle public leaderboard score of: **0.9447**
+
+For more details, the full implementation including EDA, data preprocessing, feature engineering, ppipeline construction, and model training, please refer to the "Predicting_Heart_Disease_Group_9_Probstat.ipynb" uploaded in this repository.
+
+
+
+
+
+
+
