@@ -30,6 +30,26 @@ Bayes’ Theorem is widely used in statistics, machine learning, medical diagnos
 
 The Naive Bayes algorithm is a classification method in machine learning that applies Bayes’ Theorem with the assumption that each feature is independent of the others given the class. This assumption simplifies the computation of probabilities when dealing with multiple features. In practice, the algorithm calculates the probability of each class given the observed features and then selects the class with the highest probability as the prediction. Because of its simplicity and efficiency, Naive Bayes is widely used in tasks such as text classification, spam detection, sentiment analysis, and medical data classification.
 
+According to Bayes’ theorem, probability of event A given that event B has already occurred can be calculated using the probabilities of event A and event B and probability of event B given that A has already occurred. Bayes’ theorem is so fundamental and ubiquitous that a field called "bayesian statistics" exists. In bayesian statistics, the probability of an event or hypothesis as evidence comes into play. Therefore, prior probabilities and posterior probabilities differ depending on the evidence.
+ 
+ Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of conditional independence between every pair of features given the value of the class variable. Bayes’ theorem states the following relationship, given class variable y and dependent feature vector $x_1$ through $x_n$ :
+ 
+  $P(y \mid x_1, ..., x_n) = \frac{P(y)\,P(x_1, ..., x_n \mid y)}{P(x_1, ..., x_n)}$ 
+        
+Using the naive conditional independence assumption that:
+$P(x_i \mid y, x_1, ..., x_{i-1}, x_{i+1}, ..., x_n) = P(x_i \mid y)$
+
+for all $i$, this relationship is simplified to: $P(y \mid x_1, ..., x_n) = \frac{P(y)\prod_{i=1}^{n} P(x_i \mid y)}{P(x_1, ..., x_n)}$
+
+Since $P(x_1,...,x_n)$ is constant given the input, we can use the following classification rule: 
+
+$P(y \mid x_1, ..., x_n) \propto P(y)\prod_{i=1}^{n} P(x_i \mid y)$ $=>$ $\hat{y} = \arg\max_y P(y)\prod_{i=1}^{n} P(x_i \mid y)$
+
+The main idea behind the Naive Bayes classifier is to use Bayes' Theorem to classify data based on the probabilities of different classes given the features of the data. It is used mostly in high-dimensional text classification
+
+- The Naive Bayes Classifier is a simple probabilistic classifier and it has very few number of parameters which are used to build the ML models that can predict at a faster speed than other classification algorithms.
+- It is a probabilistic classifier because it assumes that one feature in the model is independent of existence of another feature. In other words, each feature contributes to the predictions with no relation between each other.
+- Naive Bayes Algorithm is used in spam filtration, Sentimental analysis, classifying articles and many more.
 yg blm:
 - penjelasan singkat mengenai Teori Bayes
 - penjelasan bagaimana Teori Bayes digunakan dalam Algoritma Naive Bayes
