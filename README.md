@@ -50,6 +50,7 @@ The main idea behind the Naive Bayes classifier is to use Bayes' Theorem to clas
 - The Naive Bayes Classifier is a simple probabilistic classifier and it has very few number of parameters which are used to build the ML models that can predict at a faster speed than other classification algorithms.
 - It is a probabilistic classifier because it assumes that one feature in the model is independent of existence of another feature. In other words, each feature contributes to the predictions with no relation between each other.
 - Naive Bayes Algorithm is used in spam filtration, Sentimental analysis, classifying articles and many more.
+  
 yg blm:
 - penjelasan singkat mengenai Teori Bayes
 - penjelasan bagaimana Teori Bayes digunakan dalam Algoritma Naive Bayes
