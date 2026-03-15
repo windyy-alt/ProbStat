@@ -12,9 +12,9 @@ Dataset: [Predicting Heart Disease - Kaggle](https://www.kaggle.com/competitions
 
 **Bayes’ Theorem**
 
-Bayes’ Theorem is a mathematical formula used to determine the probability of an event based on prior knowledge of related conditions. It describes how the probability of a hypothesis changes when new evidence is observed.
+Bayes’ Theorem is a mathematical formula used to determine the probability of an event based on prior knowledge of related conditions. It describes how the probability of a hypothesis changes when new evidence is observed.​
 
-P(A∣B)= P(B∣A)P(A) / P(B)​
+``P(A∣B)= P(B∣A)P(A) / P(B)``​
 
 P(A | B) → Posterior probability: the probability of event A occurring given that B is true.
 
