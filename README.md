@@ -85,7 +85,7 @@ This project uses the dataset from the **Kaggle Playground Series - Season 6, Ep
 | `Slope of ST` | int | Slope of the peak exercise ST segment (1–3) |
 | `Number of vessels fluro` | int | Number of major vessels colored by fluoroscopy (0–3) |
 | `Thallium` | int | Thallium stress test result (3 = normal, 6 = fixed defect, 7 = reversible defect) |
-| `Heart Disease` | string | **Target variable** — whether heart disease is present (`Presence`) or not (`Absence`) |
+| `Heart Disease` | string | **Target variable** whether heart disease is present (`Presence`) or not (`Absence`) |
 
 ---
 
@@ -102,7 +102,7 @@ The target column is `Heart Disease`, a binary classification label:
 
 ### Cross-Validation (Local) vs. Kaggle Public Leaderboard Score
 
-Two Naive Bayes variants were evaluated and compared — both locally via cross-validation and on the Kaggle public leaderboard.
+Two Naive Bayes variants were evaluated and compared, both locally via cross-validation and on the Kaggle public leaderboard.
 
 | Model | CV Score (Local) | Kaggle Public Score |
 |---|---|---|
